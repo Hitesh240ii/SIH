@@ -806,3 +806,27 @@ button.btn-primary:hover {
 .login-redirect a:hover {
   text-decoration: underline;
 }
+
+.phone-input {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-input select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+.phone-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
