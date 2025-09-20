@@ -651,3 +651,158 @@ body::before {
     width: 90%;  /* 1 per row */
   }
 }
+
+
+.register-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("bg.jpg") center/cover no-repeat fixed;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.register-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 40px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.register-card h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #32cd32; /* Green accent */
+}
+
+.register-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.register-card button {
+  width: 100%;
+  padding: 14px;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.register-card button:hover {
+  background-color: #218838;
+}
+
+.login-redirect {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-redirect a {
+  color: #32cd32;
+  text-decoration: none;
+}
+
+.login-redirect a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url("bg.jpg") center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.register-container {
+  background: rgba(61, 60, 60, 0.6); /* semi-transparent black */
+  padding: 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  backdrop-filter: blur(1px);      /* glassy blur effect */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  box-shadow: 0 8px 20px rgba(95, 88, 88, 0.3); /* optional soft shadow */
+  border: 1px solid rgba(190, 181, 181, 0.1);
+
+}
+
+
+.register-container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #48c348; /* highlight selected role */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+button.btn-primary {
+  background: #2fa14a;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  transition: 0.3s;
+}
+
+button.btn-primary:hover {
+  background: #218838;
+}
+
+.login-redirect {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-redirect a {
+  color: #32cd32;
+  text-decoration: none;
+}
+
+.login-redirect a:hover {
+  text-decoration: underline;
+}

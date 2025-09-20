@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishiConnect Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="register.js" defer></script>
+</head>
+<body>
+  <div class="register-container">
+    <h1>Register as <span id="selected-role"></span></h1>
+
+    <form id="registerForm">
+      <!-- Hidden role input -->
+      <input type="hidden" id="roleInput" name="role">
+
+      <!-- Common fields -->
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="fullName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <!-- Role-specific fields -->
+      <div id="role-specific-fields"></div>
+
+      <button type="submit" class="btn-primary">Register</button>
+    </form>
+
+    <p class="login-redirect">
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+  </div>
+</body>
+</html>
