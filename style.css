@@ -1,0 +1,562 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #121212;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* full height */
+  background-image: url("bg.jpg"); /* image name */
+  background-size: cover; /* cover full screen */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat; /* no repeat */
+  font-family: Arial, sans-serif;
+  color: white; /* text color visible on image */
+}
+
+body {
+  position: relative;
+  background: url("bg.jpg") center/cover no-repeat;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* black transparent layer */
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url("bg.jpg") center/cover no-repeat fixed; /* fixed keeps it in place */
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url("bg.jpg") center/cover no-repeat fixed;
+  font-family: Arial, sans-serif;
+  color: white;
+  position: relative;
+}
+
+/* Overlay that stays fixed with image */
+body::before {
+  content: "";
+  position: fixed; /* stays with background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* dark transparent layer */
+  z-index: -1; /* stays behind content */
+}
+
+.hero {
+  min-height: 80vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-start; /* Align content to top */
+  align-items: center; /* Center horizontally */
+  padding-top: 60px; /* Space from top */
+  text-align: center;
+  position: relative;
+}
+
+.hero .overlay {
+  background: none;
+  padding: 10px 20px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 4.5rem; /* Adjust as needed */
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+}
+
+.hero h1 .highlight {
+  color: #32cd32; /* Green for "Farmers" */
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem; /* Smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem; /* Smaller on phones */
+  }
+}
+
+/* Features container */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px; /* Space from buttons */
+  gap: 40px; /* Space between features */
+}
+
+/* Individual feature */
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Glassy circular logo */
+/* Features container */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align top */
+  margin-top: 40px;
+  gap: 40px;
+}
+
+/* Individual feature */
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  max-width: 180px; /* Optional: control width */
+}
+
+/* Glassy circular logo */
+.feature-logo {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Feature title */
+.feature-item h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Feature description */
+.feature-desc {
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.1;
+  margin: 3px 0 0;
+  text-align: center;
+}
+
+/* Vertical separators */
+.separator {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  height: 120px; /* Adjusted to fit logo + text */
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .separator {
+    display: none;
+  }
+}
+
+.hero p {
+  max-width: 600px; /* Limit width for readability */
+  margin: 10px auto 20px; /* Top margin 20px, auto horizontal to center */
+  margin-bottom: 10px; /* Bottom margin 10px */
+  text-align: center; /* Center the text */
+  font-size: 1.1rem; /* Optional: adjust size */
+  line-height: 1.5; /* Space between lines */
+  color: #fff; /* Ensure text is visible on background */
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.hero span {
+  color: #32cd32;
+}
+
+.buttons button {
+  margin: 10px;
+  margin-bottom: 10px;
+  padding: 16px 32px; /* Increase padding for bigger buttons */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem; /* Increase text size */
+  font-weight: bold; /* Optional: make text bold */
+  transition: 0.3s ease; /* Smooth hover */
+}
+
+.btn-primary {
+  background: #28a745;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(5px); /* Blur background behind button */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  color: #fff; /* White text */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle border */
+  border-radius: 6px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+}
+
+/* Roles Section */
+.roles {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Role description for Farmer & Merchant */
+.role-desc {
+  font-size: 0.9rem;
+  margin: 10px 0 10px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.3;
+}
+
+/* Section heading */
+.roles h2 {
+  font-size: 3rem; /* Bigger heading */
+  font-weight: bold; /* Bold */
+  margin-bottom: 10px; /* Space below heading */
+  color: #ffffff; /* Optional: green to match theme */
+}
+
+.roles-intro {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8); /* Slightly lighter white */
+  max-width: 700px; /* Optional: limit width */
+  margin: 0 auto 30px; /* Center horizontally with space below */
+  line-height: 1.4;
+}
+
+/* Role cards container */
+.role-cards {
+  display: flex;
+  flex-wrap: wrap; /* Wrap on smaller screens */
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+}
+
+/* Individual role card */
+/* Individual role card with glass effect */
+.card {
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+  backdrop-filter: blur(8px); /* glass blur */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: left;
+  color: #fff;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+}
+
+/* Optional: add subtle role-specific tints */
+.card.farmer {
+  background: rgba(40, 200, 70, 0.1); /* light green */
+}
+
+.card.merchant {
+  background: rgba(0, 123, 255, 0.1); /* light blue */
+}
+
+.card.buyer {
+  background: rgba(255, 255, 0, 0.08); /* light yellow / gold */
+}
+
+.card.govt {
+  background: rgba(128, 0, 128, 0.08); /* light purple */
+}
+
+/* Hover effect to make it slightly more opaque */
+.card:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.card ul li {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+/* Join button */
+.card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745; /* Green button for all roles */
+  transition: 0.3s ease;
+}
+
+.card button:hover {
+  opacity: 0.9;
+}
+
+.selected-card {
+  border: 2px solid #32cd32; /* Green border for selected card */
+  box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .role-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Continue to Registration button container */
+.continue-btn-container {
+  text-align: center; /* Center horizontally */
+  margin-top: 30px; /* Space above button */
+}
+
+/* Continue button styling */
+.continue-btn {
+  background-color: #28a745; /* Green */
+  color: #fff; /* White text */
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 12px; /* Rounded corners */
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.continue-btn:hover {
+  opacity: 0.9; /* Slight hover effect */
+}
+
+.testimonials {
+  padding: 60px 40px; /* space around section */
+  text-align: center; /* No background color, so it floats on page bg image */
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff; /* white text on background */
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* optional for readability */
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* space between cards */
+  flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.95); /* white/off-white box */
+  color: #333; /* dark text */
+  padding: 20px 25px;
+  border-radius: 12px;
+  width: 280px; /* fixed width for horizontal layout */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+  text-align: left;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.testimonial .rating {
+  color: #FFD700; /* gold stars */
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.testimonial h4 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial {
+    width: 90%; /* almost full width on small screens */
+    text-align: center;
+  }
+}
+
+.top-banner {
+  display: inline-block; /* Only as wide as text */
+  padding: 4px 12px; /* Small padding around text */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  color: #fff; /* White text */
+  font-size: 0.8rem; /* Small text */
+  margin: 0;
+  margin-top: 0; /* Touch top border */
+  border-radius: 6px; /* Rounded corners */
+  backdrop-filter: blur(5px); /* Blur background behind box */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
+
+.top-banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  padding-top: 0; /* Touch top border */
+}
+
+.top-banner {
+  display: inline-block; /* Only as wide as text */
+  padding: 4px 12px; /* Small padding */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  color: #fff; /* White text */
+  font-size: 0.8rem; /* Small text */
+  border-radius: 6px; /* Rounded corners */
+  backdrop-filter: blur(5px); /* Glass blur effect */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
+
+/* Previous styles remain the same */
+/* Quick Login Box */
+.quick-login {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 160px;
+  z-index: 1000;
+  font-size: 0.85rem;
+  color: #fff;
+  overflow: hidden; /* hide overflow when collapsed */
+  transition: max-height 0.3s ease;
+  max-height: 30px; /* collapsed height (only toggle visible) */
+}
+
+/* Toggle button */
+.quick-login-toggle {
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Content inside */
+.quick-login-content {
+  margin-top: 8px;
+}
+
+/* Expanded state */
+.quick-login.expanded {
+  max-height: 500px; /* enough to show all content */
+}
+
+/* Login buttons styling */
+.login-btn {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.login-btn.farmer {
+  background: rgba(109, 212, 133, 0.8);
+}
+
+.login-btn.merchant {
+  background: rgba(149, 172, 197, 0.8);
+}
+
+.login-btn.buyer {
+  background: rgba(206, 188, 240, 0.8);
+}
+
+.login-btn.govt {
+  background: rgba(226, 156, 110, 0.8);
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+.section-divider {
+  border: none; /* remove default border */
+  height: 2px; /* thickness of divider */
+  width: 60px; /* small horizontal line */
+  margin: 40px auto; /* spacing and center */
+  background: rgba(255, 255, 255, 0.3); /* subtle translucent white */
+  border-radius: 1px; /* slightly rounded ends */
+}
