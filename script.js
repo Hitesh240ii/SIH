@@ -32,3 +32,9 @@ document.querySelector(".btn-primary").addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+// Smooth scroll for "Learn More" button
+document.querySelector(".btn-secondary").addEventListener("click", () => {
+  document.querySelector("#info-section").scrollIntoView({ behavior: "smooth" });
+});
+

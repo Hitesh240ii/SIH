@@ -560,3 +560,94 @@ body::before {
   background: rgba(255, 255, 255, 0.3); /* subtle translucent white */
   border-radius: 1px; /* slightly rounded ends */
 }
+
+/* =======================
+   Info Section Above Reviews
+======================= */
+.info-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-subtitle {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Info Section Glassy Cards */
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.info-card {
+  flex: 0 0 calc(33.33% - 20px);
+  background: rgba(108, 158, 108, 0.08); /* soft green glassy */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s ease;
+  text-align: center;
+  min-width: 220px;
+}
+
+
+.info-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.1);  /* slightly brighter on hover */
+}
+
+.info-card .icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-size: 1.5rem;
+}
+
+.info-card h4 {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.info-card p {
+  font-size: 1.1rem;
+  line-height: 1.4;       /* slightly more space between lines */
+  color: #ccc;
+  height: 4.2em;          /* roughly 3–4 lines */
+  overflow: hidden;       /* ensures text doesn't overflow card */
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .info-card {
+    width: 45%;  /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .info-card {
+    width: 90%;  /* 1 per row */
+  }
+}
