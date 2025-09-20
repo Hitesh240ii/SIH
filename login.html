@@ -4,37 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KrishiConnect Login</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="login.js" defer></script>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/login.js" defer></script>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Login to KrishiConnect</h1>
+  <div class="login-section">
+    <div class="login-card">
+      <h2>Login to KrishiConnect</h2>
+      <form id="loginForm">
+        <!-- Email -->
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+        </div>
 
-    <form id="loginForm">
-      <div class="form-group">
-        <label for="login-email">Email</label>
-        <input type="email" id="login-email" name="email" required>
-      </div>
-
-      <div class="form-group">
-  <label for="login-password">Password</label>
-  <input type="password" id="login-password" name="password" required>
-  <input type="checkbox" id="show-password"> Show Password
+        <!-- Password with eye icon -->
+        <div class="form-group password-group">
+          <label for="login-password">Password</label>
+          <div class="password-wrapper">
+  <input type="password" id="password" name="password" placeholder="Enter your password" required>
+  <span class="toggle-password">👁️</span>
 </div>
 
-<!-- <div class="form-group show-password-container">
-  <input type="checkbox" id="show-password">
-  <label for="show-password">Show Password</label>
-</div> -->
+        </div>
 
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
 
-      <button type="submit" class="btn-primary">Login</button>
-    </form>
-
-    <p class="register-redirect">
-      Don't have an account? <a href="register.html">Register here</a>
-    </p>
+      <p class="register-redirect">
+        Don't have an account? <a href="register.html">Register here</a>
+      </p>
+    </div>
   </div>
 </body>
 </html>
