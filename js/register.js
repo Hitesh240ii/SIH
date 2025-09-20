@@ -99,3 +99,16 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
   const data = await response.json();
   alert(data.message);
 });
+
+const passwordInput = document.getElementById("password");
+const togglePassword = document.querySelector(".toggle-password");
+
+togglePassword.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    togglePassword.style.color = "#32cd32"; // optional highlight
+  } else {
+    passwordInput.type = "password";
+    togglePassword.style.color = "#ccc";
+  }
+});

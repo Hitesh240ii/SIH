@@ -6,6 +6,11 @@ body {
 }
 
 body {
+  background: url("bg.jpg") center/cover no-repeat fixed;
+}
+
+
+body {
   margin: 0;
   padding: 0;
   height: 100vh; /* full height */
@@ -719,5 +724,14 @@ body::before {
 
 .login-redirect a:hover {
   text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero {
+  animation: fadeIn 1.5s ease-in-out;
 }
 

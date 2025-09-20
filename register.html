@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KrishiConnect Registration</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="register.js" defer></script>
+  <link rel="stylesheet" href="css/register.css">
+  <script src="js/register.js" defer></script>
 </head>
 <body>
   <div class="register-container">
@@ -40,10 +40,13 @@
 </div>
 
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-      </div>
+      <div class="form-group password-group">
+  <label for="password">Password</label>
+  <div class="password-wrapper">
+    <input type="password" id="password" name="password" required>
+    <span class="toggle-password">&#128065;</span> <!-- eye icon -->
+  </div>
+</div>
 
       <!-- Role-specific fields -->
       <div id="role-specific-fields"></div>
