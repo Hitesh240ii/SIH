@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchant Dashboard</title>
+  <link rel="stylesheet" href="../css/merchantDashboard.css">
+  <script src="../js/merchantDashboard.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">KrishiConnect</h2>
+      <nav>
+        <ul>
+          <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-shopping-cart"></i> My Orders</a></li>
+          <li><a href="#"><i class="fas fa-history"></i> Purchase History</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Suppliers</a></li>
+          <li><a href="#"><i class="fas fa-exclamation-circle"></i> Complaints</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <header>
+        <h1>Merchant Dashboard</h1>
+        <p>Welcome, <span id="merchant-name"></span>!</p>
+      </header>
+
+      <!-- Stats Cards -->
+      <section class="stats-cards">
+        <div class="card" id="total-purchase">
+          <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="card-info">
+            <p>Total Purchase</p>
+            <h3 id="total-purchase-value">0</h3>
+            <span id="total-purchase-change">+0%</span>
+          </div>
+        </div>
+        <div class="card" id="active-orders">
+          <div class="card-icon"><i class="fas fa-box"></i></div>
+          <div class="card-info">
+            <p>Active Orders</p>
+            <h3 id="active-orders-value">0</h3>
+            <span id="active-orders-change">+0%</span>
+          </div>
+        </div>
+        <div class="card" id="suppliers">
+          <div class="card-icon"><i class="fas fa-users"></i></div>
+          <div class="card-info">
+            <p>Suppliers</p>
+            <h3 id="suppliers-value">0</h3>
+            <span id="suppliers-change">+0%</span>
+          </div>
+        </div>
+        <div class="card" id="profit-margin">
+          <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="card-info">
+            <p>Profit Margin</p>
+            <h3 id="profit-margin-value">0%</h3>
+            <span id="profit-margin-change">+0%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabs -->
+      <section class="tabs">
+        <div class="tab-wrapper">
+          <ul class="tab-nav">
+            <li class="active" data-tab="overview">Overview</li>
+            <li data-tab="activity">Activity</li>
+            <li data-tab="marketplace">Marketplace</li>
+            <li data-tab="tools">Tools</li>
+          </ul>
+          <div class="tab-slider"></div>
+        </div>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="overview">
+            <!-- Overview content: Quick Actions and Recent Activity only -->
+            <section class="quick-actions">
+              <button id="add-product"><i class="fas fa-plus"></i> Add New Product</button>
+              <button id="view-history"><i class="fas fa-history"></i> View Purchase History</button>
+            </section>
+
+            <section class="recent-activity">
+              <h3>Recent Activity</h3>
+              <ul id="recent-activity-list">
+                <!-- Filled dynamically -->
+              </ul>
+            </section>
+          </div>
+
+          <div class="tab-pane" id="activity"></div>
+          <div class="tab-pane" id="marketplace"></div>
+          <div class="tab-pane" id="tools"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

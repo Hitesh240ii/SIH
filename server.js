@@ -191,6 +191,79 @@ app.get("/api/farmer/dashboard/:id", async (req, res) => {
 });
 
 // ---------------------------
+// Merchant routes
+// ---------------------------
+
+// Get merchant info
+app.get("/api/merchant/:id", async (req, res) => {
+  const merchantId = req.params.id;
+  try {
+    const [results] = await db.query("SELECT * FROM merchant WHERE id = ? LIMIT 1", [merchantId]);
+    if (results.length === 0) return res.status(404).json({ success: false, message: "Merchant not found" });
+    res.json({ success: true, merchant: results[0] });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: "Database error" });
+  }
+});
+
+// Get merchant recent activity
+app.get("/api/merchant/activity/:id", async (req, res) => {
+  const merchantId = req.params.id;
+  try {
+    const [rows] = await db.query(
+      "SELECT description, created_at FROM activity WHERE merchant_id = ? ORDER BY created_at DESC LIMIT 5",
+      [merchantId]
+    );
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error fetching activity" });
+  }
+});
+
+// Get merchant dashboard stats
+app.get("/api/merchant/dashboard/:id", async (req, res) => {
+  const merchantId = req.params.id;
+  try {
+    // Total purchases (sum of all orders for this merchant)
+    const [[totalPurchases]] = await db.query(
+      "SELECT COALESCE(SUM(total_price), 0) AS total_purchases FROM orders WHERE merchant_id = ?",
+      [merchantId]
+    );
+
+    // Active orders (orders not completed)
+    const [[activeOrders]] = await db.query(
+      "SELECT COUNT(*) AS active_orders FROM orders WHERE merchant_id = ? AND status != 'completed'",
+      [merchantId]
+    );
+
+    // Suppliers (count of distinct farmers supplying this merchant)
+    const [[suppliers]] = await db.query(
+      "SELECT COUNT(DISTINCT farmer_id) AS suppliers FROM orders WHERE merchant_id = ?",
+      [merchantId]
+    );
+
+    // Profit margin (just a placeholder or calculate from orders if you have cost)
+    const [[profitMargin]] = await db.query(
+      "SELECT COALESCE(SUM(profit), 0) AS profit_margin FROM orders WHERE merchant_id = ?",
+      [merchantId]
+    );
+
+    res.json({
+      total_purchases: totalPurchases.total_purchases,
+      active_orders: activeOrders.active_orders,
+      suppliers: suppliers.suppliers,
+      profit_margin: profitMargin.profit_margin
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error fetching dashboard stats" });
+  }
+});
+
+// ---------------------------
 // Start server
 // ---------------------------
 app.listen(port, () => {
