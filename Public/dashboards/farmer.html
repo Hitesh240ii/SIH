@@ -93,7 +93,33 @@
 
   <div class="tab-content">
     <div class="tab-pane active" id="overview">
-      <!-- Overview content -->
+      <div class="overview-cards">
+  <!-- Quick Actions -->
+  <div class="overview-card quick-actions">
+    <h3>Quick Actions</h3>
+    <button onclick="window.location.href='#'">Add New Product</button>
+    <button onclick="window.location.href='#'">View Sales History</button>
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="overview-card recent-activity">
+    <h3>Recent Activity</h3>
+    <ul id="recent-activity-list">
+      <li>No recent activity yet</li>
+    </ul>
+  </div>
+
+  <!-- District Leaderboard -->
+  <div class="overview-card district-leaderboard">
+    <h3>District Leaderboard</h3>
+    <div id="leaderboard">
+      <!-- Filled dynamically via JS -->
+    </div>
+  </div>
+</div>
+
+</div>
+
     </div>
     <div class="tab-pane" id="activity"></div>
     <div class="tab-pane" id="marketplace"></div>

@@ -100,3 +100,48 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Dashboard fetch error:", err);
   }
 });
+
+
+
+// Populate Recent Activity
+const activityList = document.getElementById("recent-activity-list");
+if (d.recentActivity.length > 0) {
+  activityList.innerHTML = d.recentActivity.map(
+    a => `<li>${a.description} <small>${new Date(a.created_at).toLocaleString()}</small></li>`
+  ).join("");
+} else {
+  activityList.innerHTML = "<li>No recent activity</li>";
+}
+
+// Populate District Leaderboard
+const leaderboard = document.getElementById("leaderboard");
+if (d.leaderboard.length === 0) {
+  // If database empty, show only current user as #1
+  leaderboard.innerHTML = `
+    <div class="leaderboard-card">
+      <div class="leader-info">
+        <i class="fas fa-trophy trophy"></i>
+        <span>#1 ${user.name}</span>
+      </div>
+      <div>
+        ⭐ ${d.rating} | ₹${d.total_sales} | ${user.region || "Your Region"}
+      </div>
+    </div>
+  `;
+} else {
+  // Sort leaderboard by total_sales descending
+  const sortedLeaderboard = d.leaderboard.sort((a, b) => b.total_sales - a.total_sales);
+
+  leaderboard.innerHTML = sortedLeaderboard.map((f, i) => `
+    <div class="leaderboard-card">
+      <div class="leader-info">
+        ${i === 0 ? '<i class="fas fa-trophy trophy"></i>' : ''}
+        <span>#${i + 1} ${f.name}</span>
+      </div>
+      <div>
+        ⭐ ${f.rating} | ₹${f.total_sales} | ${f.farm_location}
+      </div>
+    </div>
+  `).join("");
+}
+
