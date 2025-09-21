@@ -27,7 +27,7 @@ console.log("first");
 
     const data = await res.json();
     console.log("second");
-    
+
     if (data.success) {
       // Save user in session storage
       sessionStorage.setItem("loggedInUser", JSON.stringify(data.user));
@@ -43,7 +43,7 @@ console.log("first");
         const role = data.user.role;
         switch (role) {
           case "Farmer":
-            window.location.href = "/dashboards/farmers.html";
+            window.location.href = "/dashboards/farmer.html";
             break;
           case "Merchant":
             window.location.href = "/dashboards/merchant.html";

@@ -1,114 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farmer Dashboard</title>
-  <link rel="stylesheet" href="../css/farmer.css" />
-  <script defer src="../js/farmer.js"></script>
+  <link rel="stylesheet" href="../css/farmerDashboard.css">
+  <script src="../js/farmerDashboard.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div class="dashboard-container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <h2 class="logo">🌱 Farmer</h2>
+      <h2 class="logo">KrishiConnect</h2>
       <nav>
         <ul>
-          <li><a href="#" class="active">🏠 Dashboard</a></li>
-          <li><a href="#">🥦 My Produce</a></li>
-          <li><a href="#">📊 Sales History</a></li>
-          <li><a href="#">🏆 Leaderboard</a></li>
-          <li><a href="#">📷 QR Scanner</a></li>
-          <li><a href="#">⚠ Complaints</a></li>
-          <li><a href="#">⚙ Settings</a></li>
+          <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-apple-alt"></i> My Produce</a></li>
+          <li><a href="#"><i class="fas fa-history"></i> Sales History</a></li>
+          <li><a href="#"><i class="fas fa-medal"></i> Leaderboard</a></li>
+          <li><a href="#"><i class="fas fa-qrcode"></i> QR Scanner</a></li>
+          <li><a href="#"><i class="fas fa-exclamation-circle"></i> Complaints</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
       </nav>
     </aside>
 
-    <!-- Main Content -->
+    <!-- Main content -->
     <main class="main-content">
       <header>
         <h1>Farmer Dashboard</h1>
-        <p id="welcome-msg">Welcome back, Farmer!</p>
+        <p>Welcome, <span id="farmer-name"></span>!</p>
       </header>
 
-      <!-- Stat Cards -->
-      <section class="stats">
-        <div class="card">
-          <h3>Total Sales</h3>
-          <p class="value" id="total-sales">₹0</p>
-          <span class="change positive">+0% vs last month</span>
+      <!-- Stats Cards -->
+      <section class="stats-cards">
+        <div class="card" id="total-sales">
+          <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="card-info">
+            <p>Total Sales</p>
+            <h3 id="total-sales-value">0</h3>
+            <span id="total-sales-change">+0%</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Active Listings</h3>
-          <p class="value" id="active-listings">0</p>
-          <span class="change negative">-0% vs last month</span>
+        <div class="card" id="active-listings">
+          <div class="card-icon"><i class="fas fa-seedling"></i></div>
+          <div class="card-info">
+            <p>Active Listings</p>
+            <h3 id="active-listings-value">0</h3>
+            <span id="active-listings-change">+0%</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Rating</h3>
-          <p class="value" id="rating">0 ⭐</p>
-          <span class="change positive">+0</span>
+        <div class="card" id="rating">
+          <div class="card-icon"><i class="fas fa-star"></i></div>
+          <div class="card-info">
+            <p>Rating</p>
+            <h3 id="rating-value">0</h3>
+            <span id="rating-change">+0%</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>District Rank</h3>
-          <p class="value" id="district-rank">#0</p>
-          <span class="change positive">▲ Improved</span>
+        <div class="card" id="district-rank">
+          <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="card-info">
+            <p>District Rank</p>
+            <h3 id="district-rank-value">0</h3>
+            <span id="district-rank-change">+0%</span>
+          </div>
         </div>
       </section>
+
+      <!-- <p id="total-sales">₹0</p>
+<p id="active-listings">0</p>
+<p id="rating">0</p>
+<p id="district-rank">#0</p> -->
+
+<ul id="recent-activity"></ul>
+<div id="leaderboard"></div>
 
       <!-- Tabs -->
-      <section class="tabs">
-        <button class="tab active" data-tab="overview">Overview</button>
-        <button class="tab" data-tab="activity">Activity</button>
-        <button class="tab" data-tab="marketplace">Marketplace</button>
-        <button class="tab" data-tab="tools">Tools</button>
-      </section>
+      <!-- Tabs -->
+<section class="tabs">
+  <div class="tab-wrapper">
+    <ul class="tab-nav">
+      <li class="active" data-tab="overview">Overview</li>
+      <li data-tab="activity">Activity</li>
+      <li data-tab="marketplace">Marketplace</li>
+      <li data-tab="tools">Tools</li>
+    </ul>
+    <div class="tab-slider"></div>
+  </div>
 
-      <!-- Tab Content -->
-      <section id="overview" class="tab-content active">
-        <div class="overview-grid">
-          <!-- Quick Actions -->
-          <div class="quick-actions card">
-            <h3>Quick Actions</h3>
-            <button class="btn">➕ Add New Produce</button>
-            <button class="btn">📊 View Sales History</button>
+  <div class="tab-content">
+    <div class="tab-pane active" id="overview">
+      <!-- Overview content -->
+    </div>
+    <div class="tab-pane" id="activity"></div>
+    <div class="tab-pane" id="marketplace"></div>
+    <div class="tab-pane" id="tools"></div>
+  </div>
+</section>
+
+
+            <section class="recent-activity">
+              <h3>Recent Activity</h3>
+              <ul id="recent-activity-list">
+                <!-- Filled dynamically -->
+              </ul>
+            </section>
+
+            <section class="district-leaderboard">
+              <h3>District Leaderboard</h3>
+              <div id="leaderboard">
+                <!-- Filled dynamically -->
+              </div>
+            </section>
           </div>
 
-          <!-- Recent Activity -->
-          <div class="recent-activity card">
-            <h3>Recent Activity</h3>
-            <ul>
-              <li>✅ New sale completed - ₹1,200</li>
-              <li>📈 Price updated for Tomatoes</li>
-              <li>⭐ Received 5-star review</li>
-            </ul>
-          </div>
-
-          <!-- District Leaderboard -->
-          <div class="leaderboard card">
-            <h3>District Leaderboard</h3>
-            <ul>
-              <li><strong>1. Anil Kumar</strong> – Pune | ⭐ 4.9 | ₹90,000</li>
-              <li><strong>2. Meera Joshi</strong> – Nashik | ⭐ 4.8 | ₹78,500</li>
-              <li><strong>3. You</strong> – Satara | ⭐ 4.7 | ₹45,000</li>
-            </ul>
-          </div>
+          <!-- Other tabs (empty for now) -->
+          <div class="tab-pane" id="activity"></div>
+          <div class="tab-pane" id="marketplace"></div>
+          <div class="tab-pane" id="tools"></div>
         </div>
-      </section>
-
-      <section id="activity" class="tab-content">
-        <h3>Activity Logs</h3>
-        <p>Here you’ll see all your past activities.</p>
-      </section>
-
-      <section id="marketplace" class="tab-content">
-        <h3>Marketplace</h3>
-        <p>Browse and manage produce listings.</p>
-      </section>
-
-      <section id="tools" class="tab-content">
-        <h3>Tools</h3>
-        <p>Coming soon: farming tools and analytics!</p>
       </section>
     </main>
   </div>
