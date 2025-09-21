@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Dashboard</title>
+  <link rel="stylesheet" href="../css/farmer.css" />
+  <script defer src="../js/farmer.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">🌱 Farmer</h2>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">🏠 Dashboard</a></li>
+          <li><a href="#">🥦 My Produce</a></li>
+          <li><a href="#">📊 Sales History</a></li>
+          <li><a href="#">🏆 Leaderboard</a></li>
+          <li><a href="#">📷 QR Scanner</a></li>
+          <li><a href="#">⚠ Complaints</a></li>
+          <li><a href="#">⚙ Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>Farmer Dashboard</h1>
+        <p id="welcome-msg">Welcome back, Farmer!</p>
+      </header>
+
+      <!-- Stat Cards -->
+      <section class="stats">
+        <div class="card">
+          <h3>Total Sales</h3>
+          <p class="value" id="total-sales">₹0</p>
+          <span class="change positive">+0% vs last month</span>
+        </div>
+        <div class="card">
+          <h3>Active Listings</h3>
+          <p class="value" id="active-listings">0</p>
+          <span class="change negative">-0% vs last month</span>
+        </div>
+        <div class="card">
+          <h3>Rating</h3>
+          <p class="value" id="rating">0 ⭐</p>
+          <span class="change positive">+0</span>
+        </div>
+        <div class="card">
+          <h3>District Rank</h3>
+          <p class="value" id="district-rank">#0</p>
+          <span class="change positive">▲ Improved</span>
+        </div>
+      </section>
+
+      <!-- Tabs -->
+      <section class="tabs">
+        <button class="tab active" data-tab="overview">Overview</button>
+        <button class="tab" data-tab="activity">Activity</button>
+        <button class="tab" data-tab="marketplace">Marketplace</button>
+        <button class="tab" data-tab="tools">Tools</button>
+      </section>
+
+      <!-- Tab Content -->
+      <section id="overview" class="tab-content active">
+        <div class="overview-grid">
+          <!-- Quick Actions -->
+          <div class="quick-actions card">
+            <h3>Quick Actions</h3>
+            <button class="btn">➕ Add New Produce</button>
+            <button class="btn">📊 View Sales History</button>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="recent-activity card">
+            <h3>Recent Activity</h3>
+            <ul>
+              <li>✅ New sale completed - ₹1,200</li>
+              <li>📈 Price updated for Tomatoes</li>
+              <li>⭐ Received 5-star review</li>
+            </ul>
+          </div>
+
+          <!-- District Leaderboard -->
+          <div class="leaderboard card">
+            <h3>District Leaderboard</h3>
+            <ul>
+              <li><strong>1. Anil Kumar</strong> – Pune | ⭐ 4.9 | ₹90,000</li>
+              <li><strong>2. Meera Joshi</strong> – Nashik | ⭐ 4.8 | ₹78,500</li>
+              <li><strong>3. You</strong> – Satara | ⭐ 4.7 | ₹45,000</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="activity" class="tab-content">
+        <h3>Activity Logs</h3>
+        <p>Here you’ll see all your past activities.</p>
+      </section>
+
+      <section id="marketplace" class="tab-content">
+        <h3>Marketplace</h3>
+        <p>Browse and manage produce listings.</p>
+      </section>
+
+      <section id="tools" class="tab-content">
+        <h3>Tools</h3>
+        <p>Coming soon: farming tools and analytics!</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

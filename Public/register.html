@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishiConnect Registration</title>
+  <link rel="stylesheet" href="../css/register.css">
+  <script src="../js/register.js" defer></script>
+</head>
+<body>
+  <div class="register-container">
+    <h1>Register as <span id="selected-role"></span></h1>
+
+    <form id="registerForm">
+      <!-- Hidden role input -->
+      <input type="hidden" id="roleInput" name="role">
+
+      <!-- Common fields -->
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="fullName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+  <label for="phone">Phone Number</label>
+  <div class="phone-input">
+    <select id="country-code" name="countryCode">
+      <option value="+91" selected>🇮🇳 +91</option>
+      <option value="+1">🇺🇸 +1</option>
+      <option value="+44">🇬🇧 +44</option>
+      <!-- Add more countries as needed -->
+    </select>
+    <input type="tel" id="phone" name="phone" placeholder="1234567890" required pattern="[0-9]{6,15}">
+  </div>
+</div>
+
+
+      <div class="form-group password-group">
+  <label for="password">Password</label>
+  <div class="password-wrapper">
+    <input type="password" id="password" name="password" required>
+    <span class="toggle-password">&#128065;</span> <!-- eye icon -->
+  </div>
+</div>
+<!-- Common fields -->
+<div class="form-group">
+  <label for="aadhar">Aadhar Number</label>
+  <input type="text" id="aadhar" name="aadhar" required pattern="[0-9]{12}" placeholder="123412341234">
+</div>
+
+<!-- Farmer example -->
+<div class="form-group">
+  <label for="farm-location">Farm Location</label>
+  <input type="text" id="farm-location" name="farmLocation" required>
+</div>
+<div class="form-group">
+  <label for="farm-size">Farm Size (in acres)</label>
+  <input type="number" id="farm-size" name="farmSize" required>
+</div>
+
+
+      <!-- Role-specific fields -->
+      <div id="role-specific-fields"></div>
+
+      <button type="submit" class="btn-primary">Register</button>
+    </form>
+
+    <p class="login-redirect">
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+  </div>
+</body>
+</html>
