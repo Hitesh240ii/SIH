@@ -413,6 +413,17 @@ header p {
   transform: translateY(-2px);
 }
 
+.logo-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.dashboard-logo {
+  max-width: 200px;   /* adjust size */
+  height: auto;
+  cursor: pointer;
+}
+
 
 /* Media queries for smaller screens */
 @media (max-width: 1024px) {
@@ -420,6 +431,8 @@ header p {
     flex: 1 1 calc(50% - 20px); /* 2 cards per row */
   }
 }
+
+
 
 @media (max-width: 768px) {
   .overview-card {
